@@ -7,7 +7,7 @@ This repository contains public Android test downloads only. It does not contain
 - Android package: `com.securi.app`
 - Android 8.0 (API 26) or newer
 - [Download the APK](https://github.com/mohammedahakimmk-beep/securi-android-download/releases/download/v0.5.0/securi-android-debug.apk)
-- SHA-256: `$(cat release-assets/securi-android-debug.apk.sha256 | awk '{print $1}')`
+- SHA-256: `708bc119a3f65eebfaaf9783a0cbd991e71cb8f68ca888558e8637d31b0ff0d9`
 - Verify with `shasum -a 256 -c securi-android-debug.apk.sha256`.
 
 This preview includes one-time remote location sharing after the phone owner approves a request; cloud event labels; nearby offline pairing with a verification code and an explicit send action; and remote screen lock after the owner enables Android device-admin access. Location reads expire after five minutes. The owner or recipient can delete shared coordinates earlier.
