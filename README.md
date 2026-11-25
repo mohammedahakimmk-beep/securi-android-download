@@ -1,14 +1,17 @@
 # Securi Android downloads
 
-This repository contains public Android test downloads for Securi. It contains no app source code or Firebase client configuration.
+This repository contains public Android test downloads only. It does not contain the app source or Firebase client configuration.
 
-## Current build
+## Current build: 0.5.0 debug preview
 
-- Version: 0.2.0 debug preview
-- Package: `com.securi.app`
+- Android package: `com.securi.app`
 - Android 8.0 (API 26) or newer
-- [Download the APK](https://github.com/mohammedahakimmk-beep/securi-android-download/releases/download/v0.2.0/securi-android-debug.apk)
-- SHA-256: `10f46714756ef63a8ba1980beaa05b77b1b48255bfd930e90a501ff77fc69d84`
-- Verify after downloading both release assets with `shasum -a 256 -c securi-android-debug.apk.sha256`.
+- [Download the APK](https://github.com/mohammedahakimmk-beep/securi-android-download/releases/download/v0.5.0/securi-android-debug.apk)
+- SHA-256: `$(cat release-assets/securi-android-debug.apk.sha256 | awk '{print $1}')`
+- Verify with `shasum -a 256 -c securi-android-debug.apk.sha256`.
 
-This is a debug-signed test build, not a store release. Remote alarm requests require an owner-enabled visible monitor, an accepted invite, verified Firebase email accounts, and internet access. The app has not been tested on a physical Android phone and should not be relied on as an emergency recovery service.
+This preview includes one-time remote location sharing after the phone owner approves a request; cloud event labels; nearby offline pairing with a verification code and an explicit send action; and remote screen lock after the owner enables Android device-admin access. Location reads expire after five minutes. The owner or recipient can delete shared coordinates earlier.
+
+FCM token registration and the Firebase sender function are prepared, but the function is not deployed. Automated push alerts therefore are not active. Deploying Cloud Functions requires enabling Firebase billing. Brightness control is not included.
+
+The APK is debug-signed and is not a Play Store release. Two-phone end-to-end tests have not been completed. Remote Firebase features need verified accounts, an accepted invite, owner-enabled visible monitoring, and internet. Nearby exchange requires both phones within range with permissions granted. Do not rely on this preview as an emergency recovery service.
